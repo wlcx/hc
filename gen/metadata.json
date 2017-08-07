@@ -280,7 +280,6 @@
       "Name" : "Carbon Dioxide Level",
       "Format" : "float",
       "Constraints" : {
-        "StepValue" : 100,
         "MaximumValue" : 100000,
         "MinimumValue" : 0
       },
@@ -297,7 +296,6 @@
       "Name" : "Carbon Dioxide Peak Level",
       "Format" : "float",
       "Constraints" : {
-        "StepValue" : 100,
         "MaximumValue" : 100000,
         "MinimumValue" : 0
       },
@@ -333,7 +331,6 @@
       "Name" : "Carbon Monoxide Level",
       "Format" : "float",
       "Constraints" : {
-        "StepValue" : 0.1,
         "MaximumValue" : 100,
         "MinimumValue" : 0
       },
@@ -350,7 +347,6 @@
       "Name" : "Carbon Monoxide Peak Level",
       "Format" : "float",
       "Constraints" : {
-        "StepValue" : 0.1,
         "MaximumValue" : 100,
         "MinimumValue" : 0
       },
@@ -471,7 +467,6 @@
       ],
       "Unit" : "lux",
       "Constraints" : {
-        "StepValue" : 0.0001,
         "MaximumValue" : 100000,
         "MinimumValue" : 0.0001
       }
@@ -741,6 +736,7 @@
       "Name" : "Filter Life Level",
       "Format" : "float",
       "Constraints" : {
+        "stepValue" : 1,
         "MaximumValue" : 100,
         "MinimumValue" : 0
       },
@@ -947,24 +943,19 @@
       ]
     },
     {
+      "Unit" : "seconds",
+      "Name" : "Lock Management Auto Security Timeout",
       "Format" : "uint32",
-      "UUID" : "0000001A-0000-1000-8000-0026BB765291",
+      "Permissions" : [
+        "securedRead",
+        "securedWrite"
+      ],
       "Properties" : [
         "read",
         "write",
         "cnotify"
       ],
-      "Name" : "Lock Management Auto Security Timeout",
-      "Permissions" : [
-        "securedRead",
-        "securedWrite"
-      ],
-      "Unit" : "seconds",
-      "Constraints" : {
-        "StepValue" : 1,
-        "MaximumValue" : 86400,
-        "MinimumValue" : 0
-      }
+      "UUID" : "0000001A-0000-1000-8000-0026BB765291"
     },
     {
       "UUID" : "000000A7-0000-1000-8000-0026BB765291",
@@ -1042,6 +1033,19 @@
       "UUID" : "00000021-0000-1000-8000-0026BB765291"
     },
     {
+      "Name" : "Motion Detected",
+      "Format" : "bool",
+      "Permissions" : [
+        "securedRead"
+      ],
+      "Properties" : [
+        "read",
+        "cnotify",
+        "uncnotify"
+      ],
+      "UUID" : "00000022-0000-1000-8000-0026BB765291"
+    },
+    {
       "Name" : "Mute",
       "Format" : "bool",
       "Permissions" : [
@@ -1054,19 +1058,6 @@
         "cnotify"
       ],
       "UUID" : "0000011A-0000-1000-8000-0026BB765291"
-    },
-    {
-      "Name" : "Motion Detected",
-      "Format" : "bool",
-      "Permissions" : [
-        "securedRead"
-      ],
-      "Properties" : [
-        "read",
-        "cnotify",
-        "uncnotify"
-      ],
-      "UUID" : "00000022-0000-1000-8000-0026BB765291"
     },
     {
       "Name" : "Name",
@@ -1514,15 +1505,18 @@
       "UUID" : "00000117-0000-1000-8000-0026BB765291"
     },
     {
+      "UUID" : "00000030-0000-1000-8000-0026BB765291",
       "Name" : "Serial Number",
       "Format" : "string",
+      "Constraints" : {
+        "MaximumLength" : 64
+      },
       "Permissions" : [
         "securedRead"
       ],
       "Properties" : [
         "read"
-      ],
-      "UUID" : "00000030-0000-1000-8000-0026BB765291"
+      ]
     },
     {
       "UUID" : "000000CB-0000-1000-8000-0026BB765291",
@@ -1566,8 +1560,7 @@
       ],
       "Properties" : [
         "read",
-        "write",
-        "cnotify"
+        "write"
       ],
       "UUID" : "00000118-0000-1000-8000-0026BB765291"
     },
@@ -1585,8 +1578,7 @@
         "securedRead"
       ],
       "Properties" : [
-        "read",
-        "cnotify"
+        "read"
       ]
     },
     {
@@ -1700,12 +1692,10 @@
       "Name" : "Streaming Status",
       "Format" : "tlv8",
       "Permissions" : [
-        "securedRead",
-        "securedWrite"
+        "securedRead"
       ],
       "Properties" : [
         "read",
-        "write",
         "cnotify"
       ],
       "UUID" : "00000120-0000-1000-8000-0026BB765291"
@@ -1931,7 +1921,7 @@
       "Format" : "uint8",
       "Constraints" : {
         "ValidValues" : {
-          "0" : "Auto",
+          "0" : "Humidifier or Dehumidifier",
           "1" : "Humidifier",
           "2" : "Dehumidifier"
         }
@@ -2087,16 +2077,19 @@
       ]
     },
     {
+      "UUID" : "00000037-0000-1000-8000-0026BB765291",
       "Name" : "Version",
       "Format" : "string",
+      "Constraints" : {
+        "MaximumLength" : 64
+      },
       "Permissions" : [
         "securedRead"
       ],
       "Properties" : [
         "read",
         "cnotify"
-      ],
-      "UUID" : "00000037-0000-1000-8000-0026BB765291"
+      ]
     },
     {
       "UUID" : "000000C8-0000-1000-8000-0026BB765291",
