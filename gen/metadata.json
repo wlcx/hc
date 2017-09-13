@@ -393,6 +393,25 @@
       ]
     },
     {
+      "Name" : "Color Temperature",
+      "UUID" : "000000CE-0000-1000-8000-0026BB765291",
+      "Properties" : [
+        "read",
+        "write",
+        "cnotify"
+      ],
+      "Format" : "uint32",
+      "Contraints": {
+        "StepValue": 1,
+        "MinimumValue": 50,
+        "MaximumValue": 400
+      },
+      "Permissions" : [
+        "securedRead",
+        "securedWrite"
+      ]
+    },
+    {
       "Constraints" : {
         "ValidValues" : {
           "0" : "Contact Detected",
@@ -2457,7 +2476,8 @@
         "00000008-0000-1000-8000-0026BB765291",
         "00000013-0000-1000-8000-0026BB765291",
         "0000002F-0000-1000-8000-0026BB765291",
-        "00000023-0000-1000-8000-0026BB765291"
+        "00000023-0000-1000-8000-0026BB765291",
+        "000000CE-0000-1000-8000-0026BB765291"
       ],
       "Name" : "Lightbulb",
       "UUID" : "00000043-0000-1000-8000-0026BB765291"
